@@ -13,8 +13,8 @@ function scrollMove() {
   var scrollNow = $(window).scrollTop(); //현재 scrollTop의 값
   var headerHeight = $('.header').height(); // .header의 길이값
   
-  console.log(scrollNow);
-  console.log($('.about').position().top);
+  // console.log(scrollNow);
+  // console.log($('.about').position().top);
   // scrollNow가 .header의 길이값과 같거나 커지면 button들의 color를 #4a4a4a로 변경
   if(scrollNow >= headerHeight)
   {
@@ -51,7 +51,14 @@ function textUp() {
   if($(window).scrollTop() >= $('.about').position().top)
   {
     $('.vertical-center').eq(1).animate({opacity: '1', top: '0px'}, 1000)
+    //About 섹션 스킬 6개 퍼센테이지만큼 색칠  
+    $('.inner-bar').each(function (){
+      var percentBar = $(this).next().text();
+      console.log(percentBar);
+      $(this).animate({width: percentBar}, 1500);
+    })
   }
+  
   //window.ScrollTop가 .contact의 top과 같거나 크면 .vertical-center가 나타남.
   if($(window).scrollTop() >= $('.contact').position().top)
   {
