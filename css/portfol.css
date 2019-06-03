@@ -72,7 +72,7 @@ body {
 /* header */
 
 .header {
-  background-image: url('../images/portfollio/hero_background.jpg');
+  background-image: url('../portfollio/hero_background.jpg');
   background-size: cover;
   background-position: center center;
   height: 100vh;
