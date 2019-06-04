@@ -68,23 +68,43 @@ function textUp() {
 
 //JavaScript로 구현
 
-// document.addEventListener('scroll', scrollEvent);
+document.addEventListener('scroll', scrollEvent);
 
-// function scrollEvent() {
-//   var scrollValue = window.scrollY;
-//   var headerHeightTwo = document.querySelector('.header').offsetHeight;
-//   console.log(scrollValue);
-//   console.log(headerHeightTwo)
+function scrollEvent() {
+  var scrollValue = window.scrollY;
+  var headerHeightTwo = document.querySelector('.header').offsetHeight;
+  console.log(scrollValue);
+  console.log(headerHeightTwo)
 
-//   if (scrollValue >= headerHeightTwo)
-//   {
-//     document.querySelector('#about-btn').style.color = '#4a4a4a';
-//     document.querySelector('#contact-btn').style.color = '#4a4a4a';
-//   } 
-//   else if(scrollValue < headerHeightTwo)
-//   {
-//     document.querySelector('#about-btn').style.color = '#ffffff';
-//     document.querySelector('#contact-btn').style.color = '#ffffff';
-//   }
-// }
+  if (scrollValue >= headerHeightTwo)
+  {
+    document.querySelector('#about-btn').style.color = '#4a4a4a';
+    document.querySelector('#contact-btn').style.color = '#4a4a4a';
+  } 
+  else if(scrollValue < headerHeightTwo)
+  {
+    document.querySelector('#about-btn').style.color = '#ffffff';
+    document.querySelector('#contact-btn').style.color = '#ffffff';
+  }
+}
+
+function scrollHandler() {
+  var movePoint = document.querySelector('')
+}
+
+var aboutTop = $('.about').position().top; // about의 top 값
+  var contactTop = $('.contact').position().top; // .contact의 top 값
+  var targetId = event.currentTarget.id; // click 이벤트가 일어난 타겟의 id
+  
+  //targetId가 about-btn일 시 about의 top 값만큼 scrollTop을 이동
+  if (targetId === 'about-btn')
+  {
+    $('html, body').animate({scrollTop: aboutTop}, 1000)
+  }
+  //targetId가 contact-btn일 시 contact의 top 값만큼 scrollTop을 이동
+  else if (targetId === 'contact-btn')
+  {
+    $('html, body').animate({scrollTop: contactTop}, 1000)
+  }
+}
 
